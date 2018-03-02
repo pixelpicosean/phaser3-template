@@ -1,0 +1,29 @@
+{
+  "name": "phaser-template",
+  "version": "0.1.0",
+  "description": "A very basic webpack based Phaser 3 template",
+  "scripts": {
+    "build": "webpack --config webpack.prod.js",
+    "start": "node webpack.dev.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:pixelpicosean/phaser3-template.git"
+  },
+  "license": "MIT",
+  "author": "Sean Bohan <pixelpicosean@gmail.com> (http://reddypanda.com)",
+  "devDependencies": {
+    "clean-webpack-plugin": "^0.1.18",
+    "colors": "^1.1.2",
+    "html-webpack-plugin": "^3.0.4",
+    "portfinder": "^1.0.13",
+    "raw-loader": "^0.5.1",
+    "uglifyjs-webpack-plugin": "^1.2.2",
+    "webpack": "^3.4.1",
+    "webpack-dev-server": "^2.11.0",
+    "webpack-merge": "^4.1.2"
+  },
+  "dependencies": {
+    "phaser": "^3.1.2"
+  }
+}
