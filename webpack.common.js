@@ -10,9 +10,6 @@ module.exports = {
 
     entry: {
         game: ['./src/main.js'],
-        vendor: [
-            'phaser',
-        ],
     },
 
     output: {
@@ -29,13 +26,16 @@ module.exports = {
         ]
     },
 
+    optimization: {
+        splitChunks: {
+            chunks: 'all',
+        },
+    },
+
     plugins: [
         new webpack.DefinePlugin({
             'CANVAS_RENDERER': JSON.stringify(true),
-            'WEBGL_RENDERER': JSON.stringify(true)
-        }),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor',
+            'WEBGL_RENDERER': JSON.stringify(true),
         }),
         new CleanWebpackPlugin(['build']),
         new HtmlWebpackPlugin({

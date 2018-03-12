@@ -1,3 +1,4 @@
+import 'phaser';
 import Title from './Title';
 
 var game;

@@ -21,6 +21,7 @@ portfinder.getPort(function(err, finalPort) {
             ],
         },
         devtool: 'source-map',
+        mode: 'development',
     }));
     const server = new WebpackDevServer(compiler, {
         stats: {
