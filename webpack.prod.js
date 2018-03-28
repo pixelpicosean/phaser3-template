@@ -5,7 +5,6 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 let common = require('./webpack.common.js');
 const version = require('./package.json').version;
@@ -31,7 +30,6 @@ const config = merge(common, {
             template: 'index.html',
             inject: 'body',
         }),
-        new UglifyJSPlugin(),
         new CopyWebpackPlugin(copyFileList),
     ],
 });
