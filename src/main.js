@@ -1,4 +1,5 @@
 import 'phaser';
+import Preloader from './Preloader';
 import Title from './Title';
 
 var game;
@@ -18,6 +19,15 @@ function resize() {
     }
 }
 
+var Boot = {
+    create: function() {
+        // Initialize things here
+
+        // Loading screen
+        this.scene.switch('Preloader');
+    },
+};
+
 window.onload = function() {
     game = new Phaser.Game({
         type: Phaser.AUTO,
@@ -25,6 +35,8 @@ window.onload = function() {
         width: 480,
         height: 640,
         scene: [
+            Boot,
+            Preloader,
             Title,
         ],
     });
