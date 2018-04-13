@@ -13,6 +13,15 @@ Very basic template project for game development with Phaser 3.
 
 ## How to run
 
+### Using yarn
+
+- Prepare: `yarn`
+- Development: `yarn start`
+- Build: `yarn build`
+
+### Using NPM
+
+- Prepare: `npm install`
 - Development: `npm run start`
 - Build: `npm run build`
 
