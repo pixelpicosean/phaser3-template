@@ -8,7 +8,9 @@ module.exports = {
     entry: {
         game: ['./src/main.js'],
     },
-
+    resolve: {
+        modules: ['src', 'assets', 'node_modules'],
+    },
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: '[name].js',
@@ -16,11 +18,11 @@ module.exports = {
 
     module: {
         rules: [
-          {
-            test: [ /\.vert$/, /\.frag$/ ],
-            use: 'raw-loader'
-          }
-        ]
+            {
+                test: [ /\.vert$/, /\.frag$/ ],
+                use: 'raw-loader',
+            },
+        ],
     },
 
     optimization: {
