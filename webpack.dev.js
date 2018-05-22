@@ -28,7 +28,7 @@ portfinder.getPort(function(err, finalPort) {
             new webpack.DefinePlugin({
                 // Enable both canvas and WebGL for better support
                 "typeof CANVAS_RENDERER": JSON.stringify(true),
-                "typeof WEBGL_RENDERER": JSON.stringify(true)
+                "typeof WEBGL_RENDERER": JSON.stringify(true),
 
                 // Development env
                 '_DEV_': JSON.stringify(true),
