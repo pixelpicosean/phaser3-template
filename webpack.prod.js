@@ -18,8 +18,8 @@ const config = merge(common, {
     plugins: [
         new webpack.DefinePlugin({
             // Enable both canvas and WebGL for better support
-            'CANVAS_RENDERER': JSON.stringify(true),
-            'WEBGL_RENDERER': JSON.stringify(true),
+            "typeof CANVAS_RENDERER": JSON.stringify(true),
+            "typeof WEBGL_RENDERER": JSON.stringify(true),
 
             // Development env
             '_DEV_': JSON.stringify(false),
@@ -37,6 +37,7 @@ const config = merge(common, {
 webpack(config, (err, stats) => {
     if (err || stats.hasErrors()) {
         // Handle errors here
+        console.log(stats.compilation.errors);
     }
     // Done processing
 });
