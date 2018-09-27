@@ -1,6 +1,6 @@
 {
   "name": "phaser-template",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "A very basic webpack based Phaser 3 template",
   "scripts": {
     "build": "node webpack.prod.js",

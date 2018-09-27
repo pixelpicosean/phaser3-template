@@ -1,30 +1,30 @@
-var BAR_HEIGHT = 20;
+var BAR_HEIGHT = 20
 
 export default new Phaser.Class({
     Extends: Phaser.Scene,
     initialize:
     function Preloader() {
-        Phaser.Scene.call(this, { key: 'Preloader' });
+        Phaser.Scene.call(this, { key: 'Preloader' })
 
-        this.bar;
+        this.bar
     },
 
     preload: function() {
         // Load assets
-        this.load.image('logo', 'media/logo.png');
+        this.load.image('logo', 'media/logo.png')
 
         // Display loading progress
-        var gameConfig = this.sys.game.config;
-        var width = gameConfig.width;
-        this.bar = this.add.graphics({ x: gameConfig.width / 2 - width / 2, y: gameConfig.height / 2 })
+        var game_config = this.game.config
+        var width = game_config.width
+        this.bar = this.add.graphics({ x: game_config.width / 2 - width / 2, y: game_config.height / 2 })
         this.bar.fillStyle(0xAEAEAE, 1)
             .fillRect(0, -(BAR_HEIGHT / 2), width, BAR_HEIGHT)
 
-        this.load.on('progress', this.updateProgressDisplay, this);
+        this.load.on('progress', this.update_progress_display, this)
     },
 
     create: function() {
-        this.load.off('progress', this.updateProgressDisplay, this);
+        this.load.off('progress', this.update_progress_display, this)
 
         this.tweens.add({
             targets: this.bar,
@@ -32,17 +32,17 @@ export default new Phaser.Class({
             duration: 200,
             ease: 'EaseQuadOut',
             onComplete: function() {
-                this.scene.switch('Title');
+                this.scene.switch('Title')
             },
             callbackScope: this,
         })
     },
 
-    updateProgressDisplay: function(pct) {
+    update_progress_display: function(pct) {
         this.bar.clear()
             .fillStyle(0x50576B, 1)
-            .fillRect(0, -(BAR_HEIGHT / 2), this.sys.game.config.width, BAR_HEIGHT)
+            .fillRect(0, -(BAR_HEIGHT / 2), this.game.config.width, BAR_HEIGHT)
             .fillStyle(0xFFFFFF, 1)
-            .fillRect(0, -(BAR_HEIGHT / 2), Math.round(this.sys.game.config.width * pct), BAR_HEIGHT)
+            .fillRect(0, -(BAR_HEIGHT / 2), Math.round(this.game.config.width * pct), BAR_HEIGHT)
     },
-});
+})
