@@ -6,16 +6,15 @@ Very basic template project for game development with Phaser 3.
 
 - dev server with live-reload
 - build
-- simple `SHOW_ALL` style stretch mode
 - webpack
-- clean structure
-- automatically find available port (start from 4000)
+- `SHOW_ALL` and `RESIZE` scale mode
+- simple preloader scene
 
 ## How to run
 
 ### Using yarn
 
-- Prepare: `yarn`
+- Prepare: `yarn install`
 - Development: `yarn start`
 - Build: `yarn build`
 
@@ -28,5 +27,7 @@ Very basic template project for game development with Phaser 3.
 ## Folders
 
 - assets: raw assets, you can put images and texture packer files here, export atlas to `media` folder
+    + tex: textures should be placed here, which will be included
+           in the `tex.tps` atlas
 - media: image, atlas, sound and whatever you need to ship with the final game
 - src: source code locates here, `main.js` is the entry

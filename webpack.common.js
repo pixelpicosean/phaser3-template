@@ -22,6 +22,22 @@ module.exports = {
                 test: [ /\.vert$/, /\.frag$/ ],
                 use: 'raw-loader',
             },
+            {
+                test: /\.css$/,
+                use: [ 'style-loader', 'css-loader' ],
+            },
+            {
+                test: /\.(ttf|eot|svg)$/,
+                use: {
+                    loader: 'file-loader',
+                },
+            },
+            {
+                test: /\.(woff|woff2)$/,
+                use: {
+                    loader: 'url-loader',
+                },
+            },
         ],
     },
 
